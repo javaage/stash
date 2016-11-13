@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+  <context id="context1">
+    <jdbcConnection connectionURL="jdbc:postgresql://localhost:5432/stash" driverClass="org.postgresql.Driver" password="19786028" userId="postgres" />
+    <javaModelGenerator targetPackage="com.pactera.stash.model" targetProject="stash" />
+    <sqlMapGenerator targetPackage="com.pactera.stash.mapper" targetProject="stash" />
+    <javaClientGenerator targetPackage="com.pactera.stash.mapper" targetProject="stash" type="XMLMAPPER" />
+    <table schema="public" tableName="record">
+      <columnOverride column="t_time" property="time" />
+      <columnOverride column="c_code" property="code" />
+      <columnOverride column="d_index" property="index" />
+    </table>
+    <table schema="public" tableName="stock">
+      <columnOverride column="c_code" property="code" />
+      <columnOverride column="c_name" property="name" />
+      <columnOverride column="c_org" property="org" />
+    </table>
+  </context>
+</generatorConfiguration>
